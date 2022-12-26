@@ -7,7 +7,7 @@ let pokemonRepository = (function () {
     ];
 
 function add(pokemon) {
-    pokemonList.push(pokemon.name, pokemon.height, pokemon.types);
+    pokemonList.push(pokemon);
 }
 
 function getAll() {
@@ -38,6 +38,5 @@ return {
 pokemonRepository.getAll().forEach(function(pokemon){
     document.write('<p> ', pokemon.name + ' (height:' + pokemon.height + ') ' + ' types: ' + pokemon.types,' </p>');
 });
-
 
 
