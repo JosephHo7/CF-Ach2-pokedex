@@ -1,8 +1,24 @@
-let pokemonList = [
-    {name: 'Bulbasaur', height: 0.7, types: ['grass', ' poison']},
-    {name: 'Charmander', height: 1.6, types: ['fire', ' ground']},
-    {name: 'Squirtle', height: 0.5, types: ['water', ' dragon']}
-];
+let pokemonRepository = (function () {
+
+    let pokemonList = [
+        {name: 'Bulbasaur', height: 0.7, types: ['grass', ' poison']},
+        {name: 'Charmander', height: 1.6, types: ['fire', ' ground']},
+        {name: 'Squirtle', height: 0.5, types: ['water', ' dragon']}
+    ];
+
+function add(pokemon) {
+    pokemonList.push(pokemon.name, pokemon.height, pokemon.types);
+}
+
+function getAll() {
+    return pokemonList;
+}
+
+return {
+    getAll: getAll,
+    add: add
+}
+}) ()
 
 //Create a loop to display pokemon names on the DOM
 // for (let i = 0; i < pokemonList.length; i++) {
@@ -19,6 +35,9 @@ let pokemonList = [
 // }
 
 //use forEach function instead of for 
-pokemonList.forEach(function(pokemon){
+pokemonRepository.getAll().forEach(function(pokemon){
     document.write('<p> ', pokemon.name + ' (height:' + pokemon.height + ') ' + ' types: ' + pokemon.types,' </p>');
 });
+
+
+
