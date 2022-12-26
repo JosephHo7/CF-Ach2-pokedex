@@ -34,6 +34,8 @@ return {
 //     }
 // }
 
+pokemonRepository.add({name: 'Pikachu', height: 0.4, types: ['electric', 'ground'] });
+
 //use forEach function instead of for 
 pokemonRepository.getAll().forEach(function(pokemon){
     document.write('<p> ', pokemon.name + ' (height:' + pokemon.height + ') ' + ' types: ' + pokemon.types,' </p>');
