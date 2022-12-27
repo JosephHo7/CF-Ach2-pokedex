@@ -4,8 +4,9 @@
 }
 
 h1 {
-    margin-left: 20px;
+    margin-left: 2%;
     margin-top: 10px;
+    font-family: sans-serif;
 }
 
 .pokedex-button {
@@ -17,10 +18,8 @@ h1 {
     align-items: center;
     padding-left: 30px;
     height: 100px;
-    width: 98%;
-    margin-top: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
+    width: 95%;
+    margin: 10px auto;
 }
 
 .pokedex-button:hover {
@@ -31,7 +30,7 @@ h1 {
     list-style: none;
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (max-width: 700px) {
     .pokedex-button{
         width: 100%;
         margin-left: 0px;

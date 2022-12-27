@@ -31,8 +31,10 @@ return {
 }
 }) ()
 
+//add pikachu to the list
 pokemonRepository.add({name: 'Pikachu', height: 0.4, types: ['electric', 'ground'] });
 
+//create all pokemon as buttons
 pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
 })
