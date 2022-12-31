@@ -22,7 +22,15 @@ function addListItem(pokemon) {
     button.classList.add('pokedex-button');
     listItem.appendChild(button);
     pokedexDisplayList.appendChild(listItem);
+    //add event listener
+    button.addEventListener('click', function () {
+        showDetails(pokemon);
+    });
 } 
+
+function showDetails(pokemon) {
+    console.log(pokemon);
+}
 
 return {
     getAll: getAll,
