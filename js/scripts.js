@@ -25,7 +25,7 @@ function addListItem(pokemon) {
     pokedexDisplayList.appendChild(listItem);
     //add event listener
     button.addEventListener('click', function () {
-        showDetails('this is title','this is text');
+        showDetails(pokemon.name,'this is text');
     });
 } 
 
@@ -42,6 +42,7 @@ function showDetails(title,text) {
     let closeButtonElement = document.createElement('button');
     closeButtonElement.classList.add('modal-close');
     closeButtonElement.innerText = 'X';
+    closeButtonElement.addEventListener('click', hideModal);
 
     let titleElement = document.createElement('h2');
     titleElement.innerText = title;
@@ -58,8 +59,21 @@ function showDetails(title,text) {
     };
 
 function hideModal() {
-    
+    modalContainer.classList.remove('is-visible');
 }
+
+window.addEventListener('keydown',(e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+        hideModal();
+    }
+});
+
+modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+        hideModal ();
+    }
+});
 
 
 function loadList() {
