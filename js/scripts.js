@@ -30,9 +30,9 @@ function addListItem(pokemon) {
 } 
 
 // show modal
-let modalContainer = document.querySelector('#modal-container');
+    let modalContainer = document.querySelector('#modal-container');
 
-function showDetails(title,text) {
+    function showDetails(title,text) {
     
     modalContainer.innerHTML = '';
     
@@ -58,22 +58,23 @@ function showDetails(title,text) {
     modalContainer.classList.add('is-visible');
     };
 
-function hideModal() {
-    modalContainer.classList.remove('is-visible');
-}
-
-window.addEventListener('keydown',(e) => {
-    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
-        hideModal();
+// hide modal 
+    function hideModal() {
+        modalContainer.classList.remove('is-visible');
     }
-});
 
-modalContainer.addEventListener('click', (e) => {
-    let target = e.target;
-    if (target === modalContainer) {
-        hideModal ();
-    }
-});
+    window.addEventListener('keydown',(e) => {
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
+
+    modalContainer.addEventListener('click', (e) => {
+        let target = e.target;
+        if (target === modalContainer) {
+            hideModal ();
+        }
+    });
 
 
 function loadList() {
