@@ -25,15 +25,42 @@ function addListItem(pokemon) {
     pokedexDisplayList.appendChild(listItem);
     //add event listener
     button.addEventListener('click', function () {
-        showDetails(pokemon);
+        showDetails('this is title','this is text');
     });
 } 
 
-function showDetails(pokemon) {
-    loadDetails(pokemon).then(function() {
-        console.log(pokemon);
-    });
+// show modal
+let modalContainer = document.querySelector('#modal-container');
+
+function showDetails(title,text) {
+    
+    modalContainer.innerHTML = '';
+    
+    let modal = document.createElement('div');
+    modal.classList.add('modal');
+
+    let closeButtonElement = document.createElement('button');
+    closeButtonElement.classList.add('modal-close');
+    closeButtonElement.innerText = 'X';
+
+    let titleElement = document.createElement('h2');
+    titleElement.innerText = title;
+
+    let contentElement = document.createElement('p');
+    contentElement.innerText = text;
+
+    modal.appendChild(closeButtonElement);
+    modal.appendChild(titleElement);
+    modal.appendChild(contentElement);
+    modalContainer.appendChild(modal);
+
+    modalContainer.classList.add('is-visible');
+    };
+
+function hideModal() {
+    
 }
+
 
 function loadList() {
     return fetch(apiUrl).then(function (response) {
