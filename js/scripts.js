@@ -76,7 +76,7 @@ function addListItem(pokemon) {
         }
     });
 
-
+// load functions
 function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
