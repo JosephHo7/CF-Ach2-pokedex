@@ -25,14 +25,14 @@ function addListItem(pokemon) {
     pokedexDisplayList.appendChild(listItem);
     //add event listener
     button.addEventListener('click', function () {
-        showDetails(pokemon.name,'this is text');
+         showDetails(pokemon);
     });
 } 
 
 // show modal
     let modalContainer = document.querySelector('#modal-container');
 
-    function showDetails(title,text) {
+    function showModal(title,text, img) {
     
     modalContainer.innerHTML = '';
     
@@ -50,9 +50,15 @@ function addListItem(pokemon) {
     let contentElement = document.createElement('p');
     contentElement.innerText = text;
 
+    let imgElement = document.createElement('img'); 
+    imgElement.setAttribute('src', img);
+    imgElement.setAttribute('alt', 'pokemon img'); 
+
+
     modal.appendChild(closeButtonElement);
     modal.appendChild(titleElement);
     modal.appendChild(contentElement);
+    modal.appendChild(imgElement);
     modalContainer.appendChild(modal);
 
     modalContainer.classList.add('is-visible');
@@ -105,6 +111,12 @@ return fetch(url).then(function (response) {
 }).catch(function (e) {
     console.error(e);
 });
+}
+
+function showDetails(pokemon) {
+    loadDetails(pokemon).then(function() {
+        showModal(pokemon.name, 'pokemon height: ' + pokemon.height, pokemon.imageUrl);
+    })
 }
 
 return {
