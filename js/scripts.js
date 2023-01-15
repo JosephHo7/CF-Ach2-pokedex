@@ -129,11 +129,6 @@ return {
 }) ()
 
 
-//create all pokemon as buttons
-pokemonRepository.getAll().forEach(function(pokemon) {
-    pokemonRepository.addListItem(pokemon);
-})
-
 //fetch and add pokemon data from API
 pokemonRepository.loadList().then(function(){
     pokemonRepository.getAll().forEach(function(pokemon){
