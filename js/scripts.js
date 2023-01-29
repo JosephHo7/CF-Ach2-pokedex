@@ -16,11 +16,13 @@ function getAll() {
 }
 
 function addListItem(pokemon) {
-    let pokedexDisplayList = document.querySelector('.pokemon-list');
+    let pokedexDisplayList = document.querySelector('.list-group');
     let listItem = document.createElement('li');
+    listItem.classList.add('list-group-item');
     let button = document.createElement('button');
     button.innerText = pokemon.name;
     button.classList.add('pokedex-button');
+    button.classList.add('btn-primary');
     listItem.appendChild(button);
     pokedexDisplayList.appendChild(listItem);
     //add event listener
