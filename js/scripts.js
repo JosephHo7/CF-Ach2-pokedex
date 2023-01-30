@@ -3,10 +3,6 @@ let pokemonRepository = (function () {
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
-    // {name: 'Bulbasaur', height: 0.7, types: ['grass', ' poison']},
-    // {name: 'Charmander', height: 1.6, types: ['fire', ' ground']},
-    // {name: 'Squirtle', height: 0.5, types: ['water', ' dragon']}
-
 function add(pokemon) {
     pokemonList.push(pokemon);
 }
@@ -19,10 +15,9 @@ function addListItem(pokemon) {
     let pokedexDisplayList = document.querySelector('.list-group');
     let listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
-    let button = document.createElement('button');
+    let button = document.querySelector('#pokemon-btn');
     button.innerText = pokemon.name;
     button.classList.add('pokedex-button');
-    button.classList.add('btn-primary');
     listItem.appendChild(button);
     pokedexDisplayList.appendChild(listItem);
     //add event listener

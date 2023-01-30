@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;;
 }
@@ -43,13 +43,13 @@ h1 {
         justify-content: center;
         margin-top: 10px;
 }
-}
+} */
 
 /* #modal-container {
     display: none;
 } */
 
-#modal-container.is-visible {
+/* #modal-container.is-visible {               
     position:fixed;
     padding: 20px;
     box-sizing: border-box;
@@ -76,4 +76,4 @@ h1 {
 
 .modal-close {
     float: right;
-}
+} */
