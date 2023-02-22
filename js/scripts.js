@@ -15,7 +15,8 @@ function addListItem(pokemon) {
     let pokedexDisplayList = document.querySelector('.list-group');
     let listItem = document.createElement('li');
     listItem.classList.add('list-group-item');
-    let button = document.querySelector('#pokemon-btn');
+    let button = document.createElement('button');
+    button.classList.add('btn-primary');
     button.innerText = pokemon.name;
     button.classList.add('pokedex-button');
     listItem.appendChild(button);
