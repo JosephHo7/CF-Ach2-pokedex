@@ -28,9 +28,9 @@ function addListItem(pokemon) {
 } 
 
 // show modal
-    let modalContainer = document.querySelector('#modal-container');
+let modalContainer = document.querySelector('#modal-container');
 
-    function showModal(title,text, img) {
+    function showModal(title,text,img) {
     
     modalContainer.innerHTML = '';
     
