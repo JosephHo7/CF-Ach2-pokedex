@@ -13,21 +13,6 @@ h1 {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-    /* .pokedex-button {
-        width: 100%;
-        margin-left: 0px;
-        margin-right: 0px;
-        justify-content: center;
-    } */
-
-    h1 {
-        display: flex;
-        justify-content: center;
-        margin-top: 10px;
-    }
-}
-
 */ #modal-container {
     display: none;
 }
@@ -68,4 +53,30 @@ h1 {
 
 h5 {
     text-transform: capitalize;
+}
+
+@media screen and (max-width: 700px) {
+    .pokedex-button {
+        width: 100%;
+        margin-left: 0px;
+        margin-right: 0px;
+        justify-content: center;
+    }
+
+    .pokemon-list {
+        display: flex;
+    }
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 700px) and (max-width:950px) {
+    .pokemon-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
