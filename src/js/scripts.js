@@ -1,6 +1,8 @@
 let pokemonRepository = (function () {
     let pokemonList = []
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150'
+    let modalContainer = document.querySelector('#modal')
+
 
     function add(pokemon) {
         pokemonList.push(pokemon)
@@ -30,7 +32,7 @@ let pokemonRepository = (function () {
     }
 
     // show modal
-    let modalContainer = document.querySelector('#modal-container')
+    // let modalContainer = document.querySelector('#modal-container')
 
     function showModal(title, img, text) {
         let modalTitle = document.querySelector('.modal-title')
@@ -44,29 +46,28 @@ let pokemonRepository = (function () {
         imgElement.setAttribute('alt', 'pokemon img')
         modalBody.appendChild(imgElement)
 
-        modalContainer.classList.add('is-visible')
     }
 
     // hide modal
-    function hideModal() {
-        modalContainer.classList.remove('is-visible')
-    }
+    // function hideModal() {
+    //     modalContainer.classList.remove('is-visible')
+    // }
 
-    window.addEventListener('keydown', (e) => {
-        if (
-            e.key === 'Escape' &&
-            modalContainer.classList.contains('is-visible')
-        ) {
-            hideModal()
-        }
-    })
+    // window.addEventListener('keydown', (e) => {
+    //     if (
+    //         e.key === 'Escape' &&
+    //         modalContainer.classList.contains('is-visible')
+    //     ) {
+    //         hideModal()
+    //     }
+    // })
 
-    modalContainer.addEventListener('click', (e) => {
-        let target = e.target
-        if (target === modalContainer) {
-            hideModal()
-        }
-    })
+    // modalContainer.addEventListener('click', (e) => {
+    //     let target = e.target
+    //     if (target === modalContainer) {
+    //         hideModal()
+    //     }
+    // }) 
 
     // load functions
     function loadList() {
@@ -89,6 +90,9 @@ let pokemonRepository = (function () {
     }
 
     function loadDetails(item) {
+        if (loadDetails.includes(item)) {
+            return item;
+        } else {
         let url = item.detailsUrl
         return fetch(url)
             .then(function (response) {
@@ -103,7 +107,7 @@ let pokemonRepository = (function () {
             .catch(function (e) {
                 console.error(e)
             })
-    }
+    }}
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
@@ -125,8 +129,10 @@ let pokemonRepository = (function () {
 })()
 
 //fetch and add pokemon data from API
-pokemonRepository.loadList().then(function () {
+function pokeApiInit () { pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
         pokemonRepository.addListItem(pokemon)
     })
-})
+})}
+
+pokeApiInit ();
