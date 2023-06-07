@@ -1,4 +1,5 @@
-Pokedex API project
+#Pokedex API project
+
 Project Description: This project was created to build an app that allows data to be pulled from an external API and displayed on a web browser. 
 
 Project API source: https://pokeapi.co/ PokéAPI Pokémon list
