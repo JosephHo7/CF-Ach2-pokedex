@@ -87,12 +87,12 @@ let pokemonRepository = (function () {
             .catch(function (e) {
                 console.error(e)
             })
-    }
+    }   
 
     function loadDetails(item) {
-        if (loadDetails.includes(item)) {
-            return item;
-        } else {
+        // if (loadDetails.includes(item)) {
+        //     return item;
+        // } else {
         let url = item.detailsUrl
         return fetch(url)
             .then(function (response) {
@@ -107,7 +107,8 @@ let pokemonRepository = (function () {
             .catch(function (e) {
                 console.error(e)
             })
-    }}
+    // }
+}
 
     function showDetails(pokemon) {
         loadDetails(pokemon).then(function () {
